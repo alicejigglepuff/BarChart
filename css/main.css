@@ -1,69 +1,64 @@
-body {
-  background-color: ivory;
+
+body, html {
+
+height:100%;
+padding:0;
+margin:0;
+}
+
+body{
+  font-family: 'Poppins', 'Hind', sans-serif;
+
 }
 header{
-  height: 550px;
-  background-image: url(../img/read.jpg);
+  height: 50px;
+  background-color: #74b624;
 }
-.content{
-  padding-top: 17%;
-  margin-left: 15%;
+header div{
+  color: white;
+  font-size: 20px;
+  padding-top: 12px;
+  padding-left: 3%;
 }
-h1 {
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-weight: bolder;
-	text-align: center;
-	color: gray;
-  display: inline;
-}
-
-.content form{
-  padding: 10px 15px;
-  margin-top: 15px;
-  margin-right: -15px;
-  margin-bottom: 15px;
-  margin-left: -15px;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 0 rgba(255, 255, 255, .1);
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 1px 0 rgba(255, 255, 255, .1);
-}
-.content input{
-  width: 30%;
-  border-radius: 25px;
-}
-
-div.navbar-header .navbar-brand {
-  padding: 0 15px;
-}
-
-#search input {
-	text-align: center;
+.barChart{
   display: inline-block;
-
+  margin-left: 2%;
 }
 
-#button {
-  font-family: 'Open Sans Condensed', sans-serif;
-  border-radius: 5px;
-  margin-left: 0%;
+.footnote{
+  display: inline-block;
+  width: 32%;
+  padding-right: 8%;
+  vertical-align: top;
+  padding-top: 120px;
 }
 
-#results {
-  font-family: 'Open Sans Condensed', sans-serif;
+.bottom{
+  display: block;
+  height: 100px;
+  background-color: #398b97;
+  color: white;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.bottom span{
+  float: right;
 }
 
-.images {
-  height: 150px;
-  width: 75px;
-  border-radius: 5px;
-  padding-bottom: 15px;
-}
-
-.col-md-4 {
-  text-align: center;
-}
-
-h2{
-  margin-top: 40px;
+/************************************
+       media queries
+ ***********************************/
+@media (max-width: 1200px){
+  .barChart{
+    display: block;
+    margin: 0px auto;
+    width: 70%;
+  }
+  .footnote{
+    display: block;
+    margin: 0px auto;
+    width: 60%;
+    padding-top: 20px;
+  }
 }

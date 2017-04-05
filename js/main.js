@@ -1,50 +1,32 @@
-function bookSearch(){
-	var search = document.getElementById("search").value
-	document.getElementById("results").innerHTML = ""
-	console.log(search)
+google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Year", "Number", { role: "style" } ],
+        ["1992", 0, "#b87333"],
+        ["1996", 194, "silver"],
+        ["2000", 558, "gold"],
+        ["2004", 671, "color: #e5e4e2"],
+        ["2008", 430, "fba55a"],
+        ["2012", 13392, "d6bfab"],
+        ["2016", 42011,"orange"]
+      ]);
 
-	$.ajax({
-		url:"https://www.googleapis.com/books/v1/volumes?q=" + search,
-		dataType:"json",
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
 
-		success: function(data) {
-			var results = document.getElementById("results")
-			for(i = 0; i < data.items.length; i++){
-
-				var jdata = data.items[i].volumeInfo
-
-				// results.innerHTML += "<h2>" + jdata.authors[0] + "</h2>" + jdata.publishedDate + "<img src='" +
-				// jdata.imageLinks.thumbnail + "'>"
-
-				var newDiv = document.createElement('DIV')
-				newDiv.className = "col-md-4 animated fadeInDownBig"
-
-				var newAuthor = document.createElement('h3')
-				var newTitle = document.createElement('h2')
-				newTitle.className = "title"
-				var author = document.createTextNode('Author: ' + jdata.authors[0])
-				var title = document.createTextNode(jdata.title)
-				newAuthor.appendChild(author)
-				newTitle.appendChild(title)
-				
-				newDiv.appendChild(newTitle)
-				newDiv.appendChild(newAuthor)
-
-				var newImg = document.createElement('IMG')
-				newImg.className = "images"
-				newImg.setAttribute('src', jdata.imageLinks.thumbnail)
-				newDiv.appendChild(newImg)
-
-				document.getElementById('results').appendChild(newDiv)
-
-			}
-		},
-
-		type: 'GET'
-	});
-}
-
-document.getElementById('button').addEventListener('click', bookSearch, false)
-
-
-
+      var options = {
+        title: "Growth of U.S. Electric Fueling Stations from 1992 to 2016",
+        width: 800,
+        height: 480,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+  }

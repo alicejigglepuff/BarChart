@@ -3,9 +3,13 @@
 <!-- Head -->
 <head>
 	<title>Book Finder</title>
-  <link rel="shortcut icon" type="text/css" href="../../Rose.ico">    
+  	<link rel="shortcut icon" type="text/css" href="../../Rose.ico">    
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+	
+	<!-- Font icons -->
+    <link rel="stylesheet" href="icon-fonts/font-awesome-4.5.0/css/font-awesome.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Hind|Poppins" rel="stylesheet">
+
 
 	<link rel="stylesheet" href="css/animate.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,27 +19,30 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <!-- Body -->
 <body>
-
 <header>
-  <div class="content">
-    <h1>Find a Book</h1>
-
-    <form>
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search" id="search">
-        </div>
-        <button type="reset" class="btn btn-default" id="button">Submit</button>
-    </form>
-  </div>
+	<div><i class="fa fa-battery-half" aria-hidden="true"></i>
+	Growth of U.S. Electric Fueling Stations</div>
 </header>
 
+<div id="columnchart_values" class="barChart"></div>
 
-		
-		<div id="results"></div>
+<div class="footnote">
+	<p>Data Source(data last updated September, 2016): either from <a href="http://www.afdc.energy.gov/fuels/stations_counts.html">U.S. Department of Energy</a> or from <a href="http://www.osti.gov/bridge/basicsearch.jsp/"> historical Transportation Energy Data Books</a>. </p>
 
+	<p>
+		This chart shows the trend of U.S. electric fueling stations from 1992 to 2016. The growth in electric vehicle supply equipment (EVSE) accelerated starting in 2012, following the 2010 increase of plug-in electric vehicles offered by major automakers. 2016 experienced the largest growth for EVSE in order to support the growing electric vehicle population. (Source: <a href="http://www.afdc.energy.gov/fuels/stations_counts.html">U.S. Department of Energy</a>)
+	</p>
+</div>
+
+<section class="bottom">
+	<p>This website is made as a thank-you note to ChargePoint. I want to thank ChargePoint for the interview. Also, I want to thank Ms. L.B. for the nice, polite and welcoming email and her time and insights while speaking with me. </p>
+	<span>--Mian Wang</span>
+</section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> 
 <script src="js/main.js"></script>
